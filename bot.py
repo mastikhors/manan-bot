@@ -42,7 +42,7 @@ async def on_message(message):
             await message.channel.send(f'Hello {username}, do you want manan pics? type pics')
             
         if user_message.lower() == 'pics':
-            await message.channel.send("Categories:\n-Bottle (bottle pics)\n-Guitar (guitar pics)\n-Waxing (waxing pics)\n-Random (random pics)\n")
+            await message.channel.send("Categories:\n-Bottle (bottle pics)\n-Guitar (guitar pics)\n-Waxing (waxing pics)\n")
         if user_message.lower() == 'bottle pics':
             await message.channel.send(manan_bottle['message'])
             await message.channel.send(manan_bottle['img'])
