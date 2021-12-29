@@ -4,7 +4,7 @@ import random
 import requests
 from dotenv import load_dotenv
 
-load_dotenv('shh.env')
+load_dotenv('.env')
 
 
 response = requests.get("https://manan-api.herokuapp.com/bottle")
