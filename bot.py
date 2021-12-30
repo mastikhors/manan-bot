@@ -37,24 +37,24 @@ async def on_message(message):
     if message.author == client.user:
         return 
 
-    if message.channel.name == 'manan':
-        if user_message.lower() == 'hello':
-            await message.channel.send(f'Hello {username}, do you want manan pics? type pics')
-            
-        if user_message.lower() == 'pics':
-            await message.channel.send("Categories:\n-Bottle (bottle pics)\n-Guitar (guitar pics)\n-Waxing (waxing pics)\n")
-        if user_message.lower() == 'bottle pics':
-            await message.channel.send(manan_bottle['message'])
-            await message.channel.send(manan_bottle['img'])
-
-        if user_message.lower() == 'guitar pics':
-            range12 = random.randint(0,1)
-            await message.channel.send(manan_guitar[range12]['message'])
-            await message.channel.send(manan_guitar[range12]['img'])
+    
+    if user_message.lower() == 'hello':
+        await message.channel.send(f'Hello {username}, do you want manan pics? type pics')
         
-        if user_message.lower() == 'waxing pics':
-            range14 = random.randint(0,3)
-            await message.channel.send(manan_wax[range14]['message'])
-            await message.channel.send(manan_wax[range14]['img'])
+    if user_message.lower() == 'pics':
+        await message.channel.send("Categories:\n-Bottle (bottle pics)\n-Guitar (guitar pics)\n-Waxing (waxing pics)\n")
+    if user_message.lower() == 'bottle pics':
+        await message.channel.send(manan_bottle['message'])
+        await message.channel.send(manan_bottle['img'])
+
+    if user_message.lower() == 'guitar pics':
+        range12 = random.randint(0,1)
+        await message.channel.send(manan_guitar[range12]['message'])
+        await message.channel.send(manan_guitar[range12]['img'])
+    
+    if user_message.lower() == 'waxing pics':
+        range14 = random.randint(0,3)
+        await message.channel.send(manan_wax[range14]['message'])
+        await message.channel.send(manan_wax[range14]['img'])
         
 client.run(TOKEN)
