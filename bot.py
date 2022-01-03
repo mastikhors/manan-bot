@@ -16,6 +16,9 @@ manan_guitar = responseg.json()
 responsew = requests.get("https://manan-api.herokuapp.com/waxing")
 manan_wax = responsew.json()
 
+responsew = requests.get("https://manan-api.herokuapp.com/memes")
+manan_memes = responsew.json()
+
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 
@@ -42,7 +45,7 @@ async def on_message(message):
         await message.channel.send(f'Hello {username}, do you want manan pics? type pics')
         
     if user_message.lower() == 'pics':
-        await message.channel.send("Categories:\n-Bottle (bottle pics)\n-Guitar (guitar pics)\n-Waxing (waxing pics)\n")
+        await message.channel.send("Categories:\n-Bottle (bottle pics)\n-Guitar (guitar pics)\n-Waxing (waxing pics)\n-Memes (manan memes)\n")
     if user_message.lower() == 'bottle pics':
         await message.channel.send(manan_bottle['message'])
         await message.channel.send(manan_bottle['img'])
@@ -56,5 +59,13 @@ async def on_message(message):
         range14 = random.randint(0,3)
         await message.channel.send(manan_wax[range14]['message'])
         await message.channel.send(manan_wax[range14]['img'])
+
+    if user_message.lower() == 'manan memes':
+        range122 = random.randint(0,1)
+        await message.channel.send(manan_memes[range122]['message'])
+        await message.channel.send(manan_memes[range122]['img'])
+    
+    
+        
         
 client.run(TOKEN)
